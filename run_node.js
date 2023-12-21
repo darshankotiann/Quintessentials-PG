@@ -1,3 +1,5 @@
+require("dotenv").config()
+const { config } = require("dotenv");
 var express = require('express');
 var app = express();
 var http = require('http'),
@@ -27,4 +29,4 @@ app.post('/ccavResponseHandler', function (request, response){
         ccavResHandler.postRes(request, response);
 });
 
-app.listen(3001,()=>{console.log("Server is started")});
+app.listen(process.env.PORT,()=>{console.log(`Server is started on ${process.env.PORT}`)});
