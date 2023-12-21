@@ -11,7 +11,9 @@ app.use(express.static('public'));
 app.set('views', __dirname + '/public');
 app.engine('html', require('ejs').renderFile);
 
-
+app.get("/",(req,res)=>{
+    res.send("Server is Started")
+})
 app.get('/about', function (req, res){
     	res.render('dataFrom.html');
 });
